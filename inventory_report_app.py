@@ -19,8 +19,8 @@ and your **Client Excel file**. The client file may be either:
 The app will **auto-pick the best PO/LOT** per item from the master and then calculate the report.
 """)
 
-uploaded_master = st.file_uploader("Upload Master Excel File", type=["xlsx"], key="master")
-uploaded_client = st.file_uploader("Upload Client Excel File", type=["xlsx"], key="client")
+uploaded_master = st.file_uploader("Upload Master Excel File", type=["xlsx","xlsm"], key="master")
+uploaded_client = st.file_uploader("Upload Client Excel File", type=["xlsx","xlsm"], key="client")
 
 today = datetime.today().date()
 with st.expander("📅 Optional: Override 'Today' Date"):
@@ -515,3 +515,4 @@ if uploaded_master and uploaded_client:
         )
 else:
     st.warning("Please upload both files to proceed.")
+
